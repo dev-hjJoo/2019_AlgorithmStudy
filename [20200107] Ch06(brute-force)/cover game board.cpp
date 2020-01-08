@@ -17,7 +17,7 @@ int L_shape[4][3][2] = {
 	,{ {0,0},{0,1},{1,1} }
 	,{ {0,0},{1,0},{1,-1} }
 };
-//y,x
+//y,x L모양 블록 경우의 수
 
 int check_L(int shape_number,int H,int W,vector<vector<int>> arr) {
 	for (int k = 0; k < 3; k++) {
@@ -29,7 +29,7 @@ int check_L(int shape_number,int H,int W,vector<vector<int>> arr) {
 }
 
 
-//L 에서 시계방향으로 돌리기
+//해당 자리에 해당 블록이 들어갈 수 있는지 체크
 int H, W;
 
 
@@ -42,6 +42,7 @@ int game(vector<vector<int>> arr) {
 		cout << "\n";
 	}
 	cout << "\n";*/
+	// 블록 테스트
 
 	for (int i = 1; i <= H; i++) {
 		for (int k = 1; k <= W; k++) {
@@ -56,7 +57,8 @@ int game(vector<vector<int>> arr) {
 	if (count == 0) {
 		return 1;
 	}
-	//test
+	// 남은 하얀 블록의 개수가 3의 배수가 아니면 멈춤
+	// 남은 하얀 블록의 개수가 없으면 1을 반환
 	bool end = false;
 	for (int i = 1; i <= H; i++) {
 		for (int k = 1; k <= W; k++) {
@@ -88,6 +90,7 @@ int game(vector<vector<int>> arr) {
 		}
 	}
 	return ret;
+	// 해당 블럭을 채울 수 있으면 채운 뒤 재귀 함수 이용. 다른 블록을 채우는 경우의 수를 위하여 초기화 한뒤 반복문이 돌아감
 }
 int main() {
 	string str;
