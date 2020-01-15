@@ -50,6 +50,7 @@ int insert_operator(int cal, vector<int> oper, int arr_number) {
 	}
 	return 0;
 }
+// 각 연산자를 한번 사용하면 해당 연산자의 개수를 하나 줄인뒤 재귀호출함.
 
 
 int main() {
