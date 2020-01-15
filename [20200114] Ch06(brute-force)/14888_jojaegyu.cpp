@@ -28,6 +28,7 @@ int insert_operator(int cal, vector<int> oper, int arr_number) {
 		}
 		return 0;
 	}
+	// 모든 연산이 끝나고 난 뒤 최대값과 최소값을 갱신
 	if (oper[0] != 0) {
 		oper[0] -= 1;
 		insert_operator(cal + arr[arr_number], oper, arr_number);
