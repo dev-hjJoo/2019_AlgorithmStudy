@@ -23,6 +23,7 @@ int main() {
 			arr[i][k] = str[k]-'0';
 		}
 	}
+	// 입력
 	
 	for (int i = min(N, M); i != 0; i--) {
 		if (i == 1) {
@@ -30,6 +31,7 @@ int main() {
 			return 0;
 		}
 		int distance = i - 1,y=0,x=0;
+		// 정사각형의 크기의 개수만큼 반복
 		while (N != y+distance) {
 			while (M != x+distance) {
 				if (arr[y][x] == arr[y][x + distance] && arr[y][x] == arr[y + distance][x] && arr[y][x] == arr[y + distance][x + distance]) {
@@ -41,5 +43,7 @@ int main() {
 			x = 0;
 			y++;
 		}
+		// 각 꼭짓점의 숫자가 같으면 답을 출력하고 정지함.
 	}
+	
 }
