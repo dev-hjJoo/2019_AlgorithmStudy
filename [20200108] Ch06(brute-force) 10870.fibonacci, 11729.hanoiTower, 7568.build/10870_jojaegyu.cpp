@@ -21,7 +21,8 @@ int fibonacci(int n) {
 	else {
 		return fibonacci(n - 1) + fibonacci(n - 2);
 	}
-
+	// n이 0인경우와 1인경우는 기저사례
+	// 그 외의 경우에는 피보나치 수를 더함
 }
 
 int main() {
