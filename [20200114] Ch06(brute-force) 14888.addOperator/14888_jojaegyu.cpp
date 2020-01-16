@@ -67,4 +67,5 @@ int main() {
 	}
 	insert_operator(arr[0], oper_list, 0);
 	cout << maximum << "\n" << minimum;
+	//연산자 리스트는 oper_list에 숫자 리스트는 arr에
 }
