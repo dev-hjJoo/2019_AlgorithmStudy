@@ -37,16 +37,7 @@ void button_event(int button_num) {
         }
     }
     //clcok_arr[button[button_num]] 은 해당 버튼의 바꿔야하는 시계들의 배열
-}
-void button_recover(int button_num) {
-    for (int i = 0; i < button[button_num].size(); i++) {
-        if (clock_arr[button[button_num][i]] == 3) {
-            clock_arr[button[button_num][i]] = 12;
-        }
-        else {
-            clock_arr[button[button_num][i]] -= 3;
-        }
-    }
+    //버튼을 눌렀을때 해당되는 시계를 돌려줌
 }
 
 bool clock_check() {
@@ -61,6 +52,7 @@ bool clock_check() {
     }
     return 0;
 }
+// 모든 시계가 12시를 가르키고 있는지 체크
 
 int clock(int count,int button_num) {
     if (button_num == 10) {
@@ -71,6 +63,7 @@ int clock(int count,int button_num) {
         }
         return 0;
     }
+    // 버튼을 9번까지 썻고 모든 시계가 12시를 가르키고 있으면 최소값을 갱신함.
     
     clock(count, button_num + 1);
     for (int i = 1; i < 4; i++) {
@@ -79,7 +72,7 @@ int clock(int count,int button_num) {
     }
     button_event(button_num);
 }
-
+//각각의 경우의 수를 호출함
 int main() {
     int num;
     for (int i = 0; i < 16; i++) {
